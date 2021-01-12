@@ -28,56 +28,54 @@
         </header>
         <br>
 
-     
 
 
 
-            <div class="container" >
 
-                <h3 class="text-center">List of Students</h3>
-                <hr>
-                <div class="container text-left">
+        <div class="container" >
 
-                    <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add New Student</a>
+            <h3 class="text-center">List of Students</h3>
+            <hr>
+            <div class="container text-left">
 
-                </div>
-                <br>
-
-
-                <table class="table table-bordered table-striped table-hover" >
-                    <thead class="table-light">
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Password</th>
-                            <th>Address</th>
-                            <th>Phone number</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <c:forEach var="user" items="${students}">
-
-                            <tr>
-                                <td><c:out value="${user.id}" /></td>
-                                <td><c:out value="${user.name}" /></td>
-                                 <td><c:out value="********" /></td>
-                                <td><c:out value="${user.address}" /></td>
-                                <td><c:out value="${user.contact}" /></td>
-
-                                <td><a href="edit?id=<c:out value='${user.id}' />"type="button" class="btn btn-warning">Edit</a> 
-                                    &nbsp;&nbsp;&nbsp;&nbsp; 
-                                    <a href="delete?id=<c:out value='${user.id}'  />"type="button" class="btn btn-danger">Delete</a></td>
-
-                            </tr>
-                        </c:forEach>
-
-                    </tbody>
-
-                </table>
+                <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add New Student</a>
 
             </div>
-      
+            <br>
+
+
+            <table class="table table-bordered table-striped table-hover" >
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Phone number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <c:forEach var="user" items="${students}">
+
+                        <tr>
+                            <td><c:out value="${user.id}" /></td>
+                            <td><c:out value="${user.name}" /></td>
+                            <td><c:out value="********" /></td>
+                            <td><c:out value="${user.address}" /></td>
+                            <td><c:out value="${user.contact}" /></td>
+                            <td><a href="edit?id=<c:out value='${user.id}' />"type="button" class="btn btn-warning">Edit</a> 
+                                <a href="delete?id=<c:out value='${user.id}'  />"type="button" class="btn btn-danger">Delete</a></td>
+                       </tr>
+
+                    </c:forEach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
     </body>
 </html>
